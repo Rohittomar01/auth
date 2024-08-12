@@ -1,0 +1,29 @@
+.container-fluid {
+    background-color: #f7faff;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .form-control {
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .invalid-feedback {
+    color: #ff4c4c;
+  }
+  

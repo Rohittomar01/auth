@@ -1,0 +1,119 @@
+<div
+  class="container-fluid min-vh-100 d-flex align-items-center justify-content-center p-4"
+  style="background: linear-gradient(to right, #e0eafc, #cfdef3)"
+>
+  <div
+    class="card shadow-lg"
+    style="width: 100%; max-width: 900px; border-radius: 20px"
+  >
+    <div class="row g-0">
+      <div
+        class="col-lg-6"
+        style="
+          background-color: #f0f4ff;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          width: 28vw;
+        "
+      >
+        <div class="p-4">
+          <img
+            src="solvei8.png"
+            alt="Signup Image"
+            class="img-fluid"
+            style="width: 25%"
+          />
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+          <img
+            src="man.png"
+            alt="Signup Image"
+            class="img-fluid"
+            style="max-width: 77%"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <div>
+          <div class="card-body p-4 p-md-5">
+            <h5 class="card-title text-center mb-4">Create Account</h5>
+            <div class="progress mb-3 d-flex gap-2" style="height: 10px">
+              <div
+                class="progress-bar-filled"
+                role="progressbar"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <div
+                class="progress-bar-empty"
+                role="progressbar"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <form (ngSubmit)="signUp()" #signUpForm="ngForm">
+              <div class="mb-3">
+                <label for="email" class="form-label">Enter Email ID</label>
+                <input
+                  type="email"
+                  name="emailId"
+                  [(ngModel)]="signUpObj.emailId"
+                  class="form-control"
+                  id="email"
+                  placeholder="LoremIpsum@gmail.com"
+                  required
+                  email
+                  #emailId="ngModel"
+                />
+                <div *ngIf="emailId.invalid && emailId.touched" class="text-danger">
+                  <small *ngIf="emailId.errors?.['required']">Email is required.</small>
+                  <small *ngIf="emailId.errors?.['email']">Please enter a valid email address.</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Enter Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  [(ngModel)]="signUpObj.name"
+                  class="form-control"
+                  id="name"
+                  placeholder="Full name"
+                  required
+                  #name="ngModel"
+                />
+                <div *ngIf="name.invalid && name.touched" class="text-danger">
+                  <small *ngIf="name.errors?.['required']">Full name is required.</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Create Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  [(ngModel)]="signUpObj.password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  required
+                  minlength="6"
+                  #password="ngModel"
+                />
+                <div *ngIf="password.invalid && password.touched" class="text-danger">
+                  <small *ngIf="password.errors?.['required']">Password is required.</small>
+                  <small *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                </div>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid">Next</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

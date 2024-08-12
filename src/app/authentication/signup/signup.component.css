@@ -1,0 +1,82 @@
+.container-fluid {
+    padding: 0 15px;
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .form-label {
+    font-weight: 600;
+  }
+  
+  .form-control {
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+  }
+  
+  .form-control::placeholder {
+    color: #9aa0b9;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .progress {
+    height: 10px;
+    border-radius: 5px;
+    background: none;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  .progress-bar-filled {
+    background-color: #007bff;
+    width: 50%;
+    border-radius: 5px;
+  }
+  
+  .progress-bar-empty {
+    background-color: #e9ecef;
+    width: 50%;
+    border-radius: 5px;
+  }
+  
+  /* Make sure the image and form stack on smaller screens */
+  @media (max-width: 992px) {
+    .card {
+      border-radius: 10px;
+    }
+  
+    .progress {
+      height: 6px;
+    }
+  
+    .card-body {
+      padding: 15px;
+    }
+  
+    .btn-primary {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
+  

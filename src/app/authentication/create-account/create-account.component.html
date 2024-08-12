@@ -1,0 +1,171 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <div class="signup-row d-flex">
+      <div
+        class="col-lg-6"
+        style="
+          background-color: #f0f4ff;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          width: 28vw;
+        "
+      >
+        <div class="p-4">
+          <img
+            src="solvei8.png"
+            alt="Signup Image"
+            class="img-fluid"
+            style="width: 25%"
+          />
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+          <img
+            src="man.png"
+            alt="Signup Image"
+            class="img-fluid"
+            style="max-width: 85%; margin-top: 25%;"
+          />
+        </div>
+      </div>
+      <div class="signup-form-container">
+        <div class="card-body">
+          <!-- Back  -->
+          <div class="back-button mb-3">
+            <a
+              href="#"
+              (click)="goBack()"
+              class="text-primary"
+              style="text-decoration: none"
+            >
+              <img
+                src="back.png"
+                alt="Signup Image"
+                class="img-fluid"
+                style="max-width: 18%"
+              />
+            </a>
+          </div>
+          <!-- Title -->
+          <h5 class="card-title text-center mb-4">Create Account</h5>
+
+          <!-- Progress Bar -->
+          <div class="progress mb-3">
+            <div class="progress-bar-filled"></div>
+            <div class="progress-bar-empty"></div>
+          </div>
+
+          <!-- Form Fields -->
+          <form (ngSubmit)="createAccount(createAccountForm)" #createAccountForm="ngForm">
+            <div class="mb-3">
+              <label for="organization-name" class="form-label">Organisation-name</label>
+              <input
+                type="text"
+                [(ngModel)]="createAccountObj.organizationName"
+                name="organizationName"
+                id="organization-name"
+                class="form-control"
+                placeholder="Organisation-name"
+                #organizationName="ngModel"
+                required
+              />
+              <div *ngIf="organizationName.invalid && (organizationName.dirty || organizationName.touched)" class="text-danger">
+                Organisation name is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="organization-id" class="form-label">Organisation-id</label>
+              <input
+                type="text"
+                [(ngModel)]="createAccountObj.organizationId"
+                name="organizationId"
+                id="organization-id"
+                class="form-control"
+                placeholder="Organisation-id"
+                #organizationId="ngModel"
+                required
+              />
+              <div *ngIf="organizationId.invalid && (organizationId.dirty || organizationId.touched)" class="text-danger">
+                Organisation ID is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="designation" class="form-label">Designation</label>
+              <input
+                type="text"
+                [(ngModel)]="createAccountObj.designation"
+                name="designation"
+                id="designation"
+                class="form-control"
+                placeholder="Designation"
+                #designation="ngModel"
+                required
+              />
+              <div *ngIf="designation.invalid && (designation.dirty || designation.touched)" class="text-danger">
+                Designation is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="birth-date" class="form-label">Birth-date</label>
+              <input
+                type="date"
+                [(ngModel)]="createAccountObj.birthDate"
+                name="birthDate"
+                id="birth-date"
+                class="form-control"
+                placeholder="Birth-date"
+                #birthDate="ngModel"
+                required
+              />
+              <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" class="text-danger">
+                Birth date is required.
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="city" class="form-label">City</label>
+                <input
+                  type="text"
+                  [(ngModel)]="createAccountObj.city"
+                  name="city"
+                  id="city"
+                  class="form-control"
+                  placeholder="City"
+                  #city="ngModel"
+                  required
+                />
+                <div *ngIf="city.invalid && (city.dirty || city.touched)" class="text-danger">
+                  City is required.
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input
+                  type="text"
+                  [(ngModel)]="createAccountObj.pincode"
+                  name="pincode"
+                  id="pincode"
+                  class="form-control"
+                  placeholder="Pincode"
+                  #pincode="ngModel"
+                  required
+                />
+                <div *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)" class="text-danger">
+                  Pincode is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" [disabled]="createAccountForm.invalid">Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
